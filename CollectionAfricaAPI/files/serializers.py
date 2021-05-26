@@ -7,8 +7,8 @@ class FileSerializer(serializers.ModelSerializer):
         model = File
         fields = ('id',
                   'name',
-                  'description',
+                  'document',
                   'size',
                   'path',
-                  'type,'
+                  'type',
                   'timestamp')

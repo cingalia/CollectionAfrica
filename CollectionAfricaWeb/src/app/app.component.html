@@ -1,0 +1,42 @@
+<!-- 
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Collection Africa</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="files" class="nav-link">Files</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="add" class="nav-link">Add</a>
+      </li>
+    </div>
+  </nav>
+
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
+</div> -->
+
+<mat-toolbar color="primary" class="expanded-toolbar">
+  <span>
+    <button mat-button routerLink="files">Collection Africa Web</button>
+    <button mat-button routerLink="files">Files</button>
+  </span>
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-button routerLink="add" >
+      Add
+    </button>
+  </div>
+  <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-menu x-position="before" #menu="matMenu">
+  <button mat-menu-item routerLink="files">
+    Files
+  </button>
+  <button mat-menu-item routerLink="add">
+    Add
+  </button>
+</mat-menu>
+<router-outlet></router-outlet>

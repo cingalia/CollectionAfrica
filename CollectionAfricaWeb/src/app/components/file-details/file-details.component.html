@@ -1,0 +1,51 @@
+<div>
+    <div *ngIf="currentFile.id" class="edit-form">
+      <h4>File</h4>
+      <form>
+        <div class="form-group">
+          <label for="file">File</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="currentFile.name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentFile.description"
+            name="description"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label><strong>Type:</strong></label>
+          {{ currentFile.type }}
+        </div>
+      </form>
+  
+  
+      <button class="badge badge-danger mr-2" (click)="deleteFile()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateFile()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentFile.id">
+      <br />
+      <p>Cannot access this File...</p>
+    </div>
+  </div>
